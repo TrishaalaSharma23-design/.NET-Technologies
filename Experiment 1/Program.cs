@@ -1,3 +1,5 @@
+/*Develop Student Admission Management Module using OOP Concepts (Class, Object, Constructor, Access Modifiers).*/
+     
 using System;
 
 namespace StudentAdmissionManagement
