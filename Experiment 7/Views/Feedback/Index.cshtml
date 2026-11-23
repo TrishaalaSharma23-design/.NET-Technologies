@@ -1,0 +1,26 @@
+@model FeedbackManagement.Models.Feedback 
+@{ 
+    ViewBag.Title = "Submit Feedback"; 
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+} 
+@Html.Partial("_FeedbackForm", Model) 
+ 
+Views/Feedback/Result.cshtml 
+ 
+@model FeedbackManagement.Models.Feedback 
+@{ 
+    ViewBag.Title = "Feedback Submitted"; 
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+} 
+<h2>Feedback Submitted Successfully!</h2> 
+<p>Thank you for sharing your feedback.</p> 
+<hr /> 
+<p><strong>Name:</strong> @Model.Name</p> 
+<p><strong>Email:</strong> @Model.Email</p> 
+<p><strong>Category:</strong> @Model.Category</p> 
+<p><strong>Rating:</strong> @Model.Rating / 5</p> 
+<p><strong>Comments:</strong> @Model.Comments</p> 
+<br /> 
+<a href="@Url.Action("Index", "Feedback")" class="btn"> 
+    Submit Another Feedback 
+</a> 
