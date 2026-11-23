@@ -1,0 +1,42 @@
+@model FeedbackManagement.Models.Feedback 
+ 
+<h2>Submit Your Feedback</h2> 
+<p>Please complete all the fields below.</p> 
+@using (Html.BeginForm("Index", "Feedback", FormMethod.Post)) 
+{ 
+    @Html.AntiForgeryToken() 
+    @Html.ValidationSummary(false, "", new { @class = "validation-summary-errors" 
+}) 
+    <div> 
+        @Html.LabelFor(m => m.Name, "Full Name") 
+        @Html.TextBoxFor(m => m.Name, 
+            new { placeholder = "Enter your full name" }) 
+        @Html.ValidationMessageFor(m => m.Name) 
+    </div> 
+    <div> 
+        @Html.LabelFor(m => m.Email, "Email Address") 
+        @Html.TextBoxFor(m => m.Email, 
+            new { type = "email", placeholder = "Enter your email" }) 
+        @Html.ValidationMessageFor(m => m.Email) 
+    </div> 
+    <div> 
+        @Html.LabelFor(m => m.Category, "Feedback Category") 
+        @Html.DropDownListFor(m => m.Category, 
+            (IEnumerable<SelectListItem>)ViewBag.Categories, 
+            "-- Select Category --") 
+        @Html.ValidationMessageFor(m => m.Category) 
+    </div> 
+    <div> 
+        @Html.LabelFor(m => m.Rating, "Rating (1 to 5)") 
+        @Html.TextBoxFor(m => m.Rating, 
+            new { type = "number", min = "1", max = "5" }) 
+        @Html.ValidationMessageFor(m => m.Rating) 
+</div> 
+    <div> 
+        @Html.LabelFor(m => m.Comments, "Your Comments") 
+        @Html.TextAreaFor(m => m.Comments, 4, 40, 
+            new { placeholder = "Write your feedback here..." }) 
+        @Html.ValidationMessageFor(m => m.Comments) 
+    </div> 
+    <button type="submit" class="btn">Submit Feedback</button> 
+} 
