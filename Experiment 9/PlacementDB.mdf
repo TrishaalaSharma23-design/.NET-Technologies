@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Placements] (
+    [PlacementId] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+    [StudentName] NVARCHAR (100) NOT NULL,
+    [EnrollmentNo] NVARCHAR (50) NOT NULL,
+    [Branch] NVARCHAR (50) NOT NULL,
+    [CompanyName] NVARCHAR (100) NOT NULL,
+    [Role] NVARCHAR (100) NOT NULL,
+    [PackageLPA] DECIMAL (5, 2) NOT NULL,
+    [Status] NVARCHAR (30) NOT NULL,
+    [DriveDate] DATE NOT NULL
+);
