@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf
+8" /> 
+<meta name="viewport" 
+content="width=device
+<title>@ViewBag.Title 
+<style> 
+body { 
+margin: 0; 
+font--
+width, initial- 
+scale=1" /> 
+Feedback Management</title> 
+family: Arial, sans
+background: #f2f5f9; 
+color: #333; 
+} 
+header { 
+background: #173b65; 
+color: white; 
+padding: 20px; 
+text
+align: center; 
+} 
+nav { 
+  background: #24558a; 
+padding: 12px; 
+text
+align: center; 
+} 
+nav a { 
+color: white; 
+text
+font
+decoration: none; 
+weight: bold; 
+} 
+main { 
+max
+width: 750px; 
+margin: 30px auto; 
+padding: 25px; 
+background: white; 
+border
+box
+radius: 8px; 
+shadow: 0 2px 8px #ccc; 
+} 
+footer { 
+text
+align: center; 
+padding: 15px; 
+color: #555; 
+} 
+input, select, textarea { 
+width: 100%; 
+padding: 10px; 
+margin: 6px 0 14px; 
+box
+sizing: border
+} 
+.btn { 
+box; 
+background: #24558a; 
+color: white; 
+padding: 11px 20px; 
+border: none; 
+cursor: pointer; 
+} 
+.field
+validation
+.validation--
+error, 
+summary
+errors { 
+color: #c62828; 
+} 
+.input
+validation
+error { 
+border: 1px solid #c62828; 
+} 
+</style> 
+</head> 
+<body> 
+<header> 
+<h1>Feedback Management System</h1> 
+<p>We value your feedback!</p> 
+</header> 
+<nav> 
+<a href="@Url.Action("Index", "Feedback")"> 
+            Home | Submit Feedback 
+        </a> 
+    </nav> 
+    <main> 
+        @RenderBody() 
+    </main> 
+    <footer> 
+        <p>&copy; 2026 Feedback Management System</p> 
+    </footer> 
+    @Scripts.Render("~/bundles/jquery") 
+    @Scripts.Render("~/bundles/jqueryval") 
+</body> 
+</html> 
